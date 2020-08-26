@@ -308,7 +308,7 @@ ec2ip_get_instance_eni() {
 		return $OCF_ERR_GENERIC
 	fi
 	ocf_log debug "network interface id associated MAC address ${MAC_ADDR}: ${EC2_NETWORK_INTERFACE_ID}"
-	return $EC2_NETWORK_INTERFACE_ID
+	echo $EC2_NETWORK_INTERFACE_ID
 }
 
 ec2ip_get_and_configure() {
