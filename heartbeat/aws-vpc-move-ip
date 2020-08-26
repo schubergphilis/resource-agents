@@ -213,7 +213,7 @@ ec2ip_validate() {
 
 ec2ip_monitor() {
   MON_RES=""
-  if [ -z "${OCF_RESKEY_eni_id_lookup}" ]; then
+  if ocf_is_true ${OCF_RESKEY_eni_id_lookup}; then
     EC2_ATTRIBUTE_LOOKUP="NetworkInterfaceId"
     EC2_ID="$(ec2ip_get_instance_eni)"
     identification="interface"
